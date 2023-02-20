@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-unresolved
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js';
 import {
-  GoogleAuthProvider, getAuth, signInWithPopup, createUserWithEmailAndPassword,
+  GoogleAuthProvider, getAuth, signInWithPopup, createUserWithEmailAndPassword, onAuthStateChanged,
 // eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import {
@@ -15,6 +15,7 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const db = getFirestore();
 
+
 export {
-  signInWithPopup, createUserWithEmailAndPassword, auth, provider, collection, addDoc, getDocs, db, deleteDoc, onSnapshot, doc, getDoc, updateDoc,
+  signInWithPopup, createUserWithEmailAndPassword, auth, provider, collection, addDoc, getDocs, db, deleteDoc, onSnapshot, doc, getDoc, updateDoc, onAuthStateChanged,
 };

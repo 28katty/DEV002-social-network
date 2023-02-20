@@ -5,6 +5,7 @@ body {
     align-items: center;
     background-color: #F8FAE4;
     margin-top: -40px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #root{
@@ -12,7 +13,7 @@ body {
 }
 
 .sectionDiv{
-    display: flex;
+    display:grid;
     justify-content: center;
     align-items: center;
 }
@@ -40,7 +41,7 @@ body {
     font-size: 40px;
 }
 
-#buttonRegister {
+#buttonRegister, #buttonLogin {
     border-radius: 40px;
     font-size: 18px;
     background: #658351;
@@ -53,18 +54,7 @@ body {
     padding: 5px;
 }
 
-#buttonLogin {
-    border-radius: 40px;
-    font-size: 18px;
-    background: #658351;
-    text-transform: uppercase;
-    height: 40px;
-    width: 50%;
-    color: #ffffff;
-    border: 1px solid #658351;
-    margin: 5px;
-    padding: 5px;
-}
+
 
 /*vista de regitrarse*/
 .registrate{
@@ -134,7 +124,6 @@ body {
     font-size: 40px;
     color: #aa8b56;
 }
-
 .contenedorForm{
     display: flex;
     align-items: center;
@@ -186,7 +175,21 @@ body {
   /* Dar color más tenue al placeholder de los input */
 input::placeholder {
     color: hwb(210 59% 39%);
+    
+    
 }
+
+textarea::placeholder{
+padding-inline-start: 180px;
+
+}
+
+.inpuText::placeholder{
+    padding-inline-start: 180px;   
+}
+
+
+
 
  /* formulario de correo */
 .bienvenidaForm{
@@ -246,23 +249,9 @@ input::placeholder {
     left: 7px;
 }
 
-/*.labelForm{
-    display: block;
-    top:300px;
-    left: 2px;
-    font-size: 20px;
-    position: relative;
-}
 
-.label{
-    display: block;
-    top:310px;
-    left: 2px;
-    font-size: 20px;
-    position: relative;
-}*/
 
-/*muro de la web*/
+/*vista general*/
 .navFijo{
     background-color: #F9DE79;
     width: 1800px;
@@ -274,72 +263,83 @@ input::placeholder {
 .nameFijo{
     color: #658361;
     justify-content: center;
-    /*align-items: center;*/
     font-size: 50px;
 }
 .task-form{
-    background-color: #658361;
+    margin-top:20px;
+    background-color:#F9DE79;
     border-radius: 40px;
-    width: 1200px;
-    height: 300px;
-    margin-left: 350px;
+    display:inline-block;
+    border:solid 3px #658361;
+
 }
 
 .labelTitle,
  .labelDescrip{
     padding: 10px;
     font-size: 20px;
-    color: #F9DE79;
+    color: #658361;
     display: block;
     margin-top: 20px;
+   
 }
 
 .inpuText{
     left: 10px;
+    border-radius: 25px;
     display: inline-block;
     margin-top: 20px;
     height: 40px;
-    width: 500px;
+    width:500px;
+    border: solid 3px #658361;
 }
 
 textArea{
     left: 10px;
+    border-radius: 25px;
     display: inline-block;
-    margin-top: 20px;
-    margin-left: 2px;
     height: 60px;
     width: 500px;
+    border: solid 3px #658361;
 }
 
 
 .buttonGuardar{
     display: block;
-    border-radius: 40px;
-    font-size: 18px;
-    background: #658351;
+    border-radius: 20px;
+    font-size: 15px;
+    background: #658361;
     height: 30px;
     width: 150px;
     color: #ffffff;
-    border: 2px solid #F9DE79;
+    border: 2px solid #ffffff;
     margin: 5px;
     margin-left: 520px;
     margin-top: 20px;
     
+    
 }
 
 .divContainer{
-    margin-top: 50px;
+    display:block;
     padding: 30px;
-    margin-left: 300px;
+    margin: 50px 50px;
+    
+    
 }
 
 .post{
-    background-color:#e1dbdb;
-    /*border-radius: 40px;*/
-    width: 1200px;
-    height: 150px;
-    margin: 70px;
-    /*border: 2px solid #F9DE79;*/
+    display:inline-block;
+    padding: 10px;
+    font-size: 20px;
+    color: #658361;
+    background-color:#F9DE79;
+    border-radius: 40px;
+    width: 40%;
+    height: 50%;
+    margin: 70px 70px;
+    border: 2px solid #F9DE79;
+    border: solid 3px #658361;
 
 }
 
@@ -356,6 +356,17 @@ textArea{
     height: 35px;
     margin-right: 250px;
     cursor: pointer;
+}
+
+
+.btn-edit, .btn-delete {
+    border-radius: 20px;
+    font-size: 15px;
+    background: #658361;
+    height: 30px;
+    width: 100px;
+    color: #ffffff;
+    border: 2px solid #ffffff;   
 }
 
 /*responsive*/
@@ -401,6 +412,8 @@ textArea{
     .login{
         margin-top: 280px;
     }
+
+    
 
     
  

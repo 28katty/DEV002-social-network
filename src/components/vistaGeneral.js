@@ -1,8 +1,8 @@
 // eslint-disable-next-line import/no-cycle
 import {
-  saveTask, onGetTasks, deleteTask, getTask, updateTask,
+  saveTask, onGetTasks, deleteTask, getTask, updateTask, 
 } from '../lib/firebase/muroFir.js';
-
+import { auth,onAuthStateChanged } from '../lib/firebase/metFirebase.js';
 export const vistaGeneral = () => {
   const homeDiv = document.createElement('div');
   const navFijo = document.createElement('nav');
@@ -49,12 +49,25 @@ export const vistaGeneral = () => {
   let editStatus = false;
   let id = '';
 
+  let userid;
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+     
+      userid = user.uid;
+    } else {
+     console.log('no hay usuario')
+    }
+  });
+
+
   window.addEventListener('DOMContentLoaded', async () => {
     onGetTasks((querySnapshot) => {
       let html = '';
+      
 
       querySnapshot.forEach((doc) => {
         const task = doc.data();
+        console.log('que hay en task', task);
         html += `
         <div class= "post">
           <h3>${task.title}</h3>
@@ -63,8 +76,10 @@ export const vistaGeneral = () => {
           <img src="images/flame.png" class= "imagenLike" alt="flama"/>
           <span class="like-count">${task.likes}</span>
         </div>
+        ${task.uid===userid ? `
           <button class='btn-delete' data-id="${doc.id}">Eliminar</button>
-          <button class='btn-edit' data-id="${doc.id}">Editar</button>
+          <button class='btn-edit' data-id="${doc.id}">Editar</button>  ` : ''}
+
         </div>
       `;
       });
@@ -78,6 +93,7 @@ export const vistaGeneral = () => {
       likeButton.addEventListener("click", function() {
         count++;
         likeCount.innerHTML = count;
+     
       });
 
       const btnDelete = divContainer.querySelectorAll('.btn-delete');
@@ -115,11 +131,12 @@ export const vistaGeneral = () => {
     const description = formMuro['task-description'];
 
     if (!editStatus) {
-      saveTask(title.value, description.value);
+      saveTask(title.value, description.value, userid);
     } else {
       updateTask(id, {
         title: title.value,
         description: description.value,
+        uid:userid
       });
       editStatus = false;
     }
