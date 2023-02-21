@@ -7,11 +7,11 @@ body {
     margin-top: -40px;
 }
 
-#root{
-    text-align:center;
+#root {
+    text-align: center;
 }
 
-.sectionDiv{
+.sectionDiv {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +40,8 @@ body {
     font-size: 40px;
 }
 
-.buttonRegister, .buttonLogin {
+.buttonRegister,
+.buttonLogin {
     border-radius: 40px;
     font-size: 18px;
     background: #658351;
@@ -56,7 +57,7 @@ body {
 
 
 /*vista de regitrarse*/
-.registrate{
+.registrate {
     margin-top: 420px;
     color: #aa8b56;
     font-size: 40px;
@@ -78,13 +79,13 @@ body {
     margin-left: 170px;
 }
 
-.iconGoogle{
+.iconGoogle {
     height: 22px;
     width: 22px;
     margin-left: 2%;
 }
 
-.iconCorreo{
+.iconCorreo {
     height: 25px;
     width: 25px;
     margin-left: 2%;
@@ -118,13 +119,13 @@ body {
 
 /*Login css */
 
-.login{
+.login {
     margin-top: 390px;
     font-size: 40px;
     color: #aa8b56;
 }
 
-.contenedorForm{
+.contenedorForm {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,7 +136,7 @@ body {
 .username {
     text-align: center;
     justify-content: center;
-    position:relative;
+    position: relative;
     display: block;
     font-size: 18px;
     background: #F8FAE4;
@@ -150,7 +151,7 @@ body {
 
 .button {
     text-align: center;
-    position:relative;
+    position: relative;
     display: block;
     border-radius: 40px;
     font-size: 18px;
@@ -165,33 +166,33 @@ body {
     left: 7px;
 }
 
-.hrefHome{
+.hrefHome {
     margin-top: 20px;
     display: block;
     cursor: pointer;
     font-size: 20px;
 }
 
-  /* Dar color más tenue al placeholder de los input */
+/* Dar color más tenue al placeholder de los input */
 input::placeholder {
     color: hwb(210 59% 39%);
 }
 
- /* formulario de correo */
-.bienvenidaForm{
-    display:contents;
+/* formulario de correo */
+.bienvenidaForm {
+    display: contents;
     width: 40px;
     height: 40px;
 }
 
-.imageLogoForm{
+.imageLogoForm {
     display: flex;
     position: absolute;
     width: 280px;
     height: 280px;
 }
 
-.nombreForm{
+.nombreForm {
     color: #aa8b56;
     font-size: 50px;
 }
@@ -202,7 +203,7 @@ input::placeholder {
     align-items: center;
     text-align: center;
     justify-content: center;
-    position:relative;
+    position: relative;
     display: block;
     font-size: 18px;
     height: 30px;
@@ -217,9 +218,9 @@ input::placeholder {
 
 }
 
-.buttonForm{
+.buttonForm {
     justify-content: center;
-    position:relative;
+    position: relative;
     display: block;
     border-radius: 40px;
     font-size: 18px;
@@ -231,28 +232,29 @@ input::placeholder {
     margin: 5px;
     padding: 5px;
     margin-top: 25px;
-    top:350px;
+    top: 350px;
     left: 7px;
 }
 
 
 
 /*Vista General*/
-.navFijo{
-    background-color:#AA8B56;
+.navFijo {
+    background-color: #AA8B56;
     width: 1800px;
     height: 70px;
     margin-top: 0%;
     position: grid;
 }
 
-.nameFijo{
+.nameFijo {
     color: #ffffff;
     justify-content: center;
-    /*align-items: center;*/
+    align-items: center;
     font-size: 50px;
 }
-.task-form{
+
+.task-form {
     background-color: #F9DE79;
     border-radius: 40px;
     width: 800px;
@@ -263,16 +265,17 @@ input::placeholder {
 }
 
 .labelTitle,
- .labelDescrip{
+.labelDescrip {
     padding: 10px;
     font-size: 20px;
-    color:#658361;
+    color: #658361;
     display: block;
     margin-top: 20px;
-  
+
 }
 
-.inpuText, .textArea{
+.inpuText,
+.textArea {
     display: inline-block;
     margin-top: 20px;
     height: 40px;
@@ -282,7 +285,7 @@ input::placeholder {
 
 }
 
-.buttonGuardar{
+.buttonGuardar {
     display: block;
     border-radius: 40px;
     font-size: 18px;
@@ -294,16 +297,17 @@ input::placeholder {
     margin: 5px;
     margin-left: 520px;
     margin-top: 20px;
-    
+
 }
 
-.divContainer{
+.divContainer {
     margin-top: 20px;
     padding: 30px;
     margin-left: 400px;
 }
-.post{
-    background-color:#AA8B56;
+
+.post {
+    background-color: #AA8B56;
     font-size: 15px;
     color: #ffffff;
     border-radius: 40px;
@@ -313,8 +317,10 @@ input::placeholder {
     border: 5px solid #F9DE79;
 
 }
-.btn-delete,.btn-edit{
-    flex-direction:row;
+
+.btn-delete,
+.btn-edit {
+    flex-direction: row;
     border-radius: 40px;
     font-size: 15px;
     background: #658351;
@@ -327,7 +333,7 @@ input::placeholder {
 }
 
 
-.like-container{
+.like-container {
     width: 100px;
     height: 50px;
     display: inline-block;
@@ -335,12 +341,12 @@ input::placeholder {
     align-content: center;
 }
 
-.like-count{
-flex-direction: row;
+.like-count {
+    flex-direction: row;
 }
 
-.imagenLike{
-    width:35px;
+.imagenLike {
+    width: 35px;
     height: 36px;
     margin-top: 50px;
     cursor: pointer;
@@ -348,7 +354,7 @@ flex-direction: row;
 
 /*responsive*/
 @media (max-width: 592px) {
-    .nombreAplicacion{
+    .nombreAplicacion {
         font-size: 30px;
     }
 
@@ -357,27 +363,28 @@ flex-direction: row;
         width: 260px;
         height: 260px;
     }
-    
-    .welcomeh1, .registrate{
+
+    .welcomeh1,
+    .registrate {
         margin-top: 300px;
     }
 
-    .imageLogoForm{
+    .imageLogoForm {
         top: 150px;
     }
 
-    .google, .correo{
+    .google,
+    .correo {
         font-size: 13px;
         margin-left: 10px;
-     }
-     
-     .nombreForm{
+    }
+
+    .nombreForm {
         font-size: 30px;
         margin-top: 70px;
     }
 
-    .login{
+    .login {
         margin-top: 280px;
     }
-
 }
