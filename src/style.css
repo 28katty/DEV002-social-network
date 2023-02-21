@@ -5,7 +5,6 @@ body {
     align-items: center;
     background-color: #F8FAE4;
     margin-top: -40px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 #root{
@@ -13,7 +12,7 @@ body {
 }
 
 .sectionDiv{
-    display:grid;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -41,7 +40,7 @@ body {
     font-size: 40px;
 }
 
-#buttonRegister, #buttonLogin {
+.buttonRegister, .buttonLogin {
     border-radius: 40px;
     font-size: 18px;
     background: #658351;
@@ -63,7 +62,7 @@ body {
     font-size: 40px;
 }
 
-#google {
+.google {
     display: block;
     border-radius: 40px;
     font-size: 18px;
@@ -91,7 +90,7 @@ body {
     margin-left: 2%;
 }
 
-#correo {
+.correo {
     display: block;
     border-radius: 40px;
     font-size: 18px;
@@ -107,7 +106,7 @@ body {
     margin-left: 170px;
 }
 
-#home{
+/*#home{
     font-size: 14px;
     height: 30px;
     width: 50%;
@@ -115,7 +114,7 @@ body {
     border: 1px solid #658351;
     margin: 2px;
     padding: 2px;
-}
+}*/
 
 /*Login css */
 
@@ -124,6 +123,7 @@ body {
     font-size: 40px;
     color: #aa8b56;
 }
+
 .contenedorForm{
     display: flex;
     align-items: center;
@@ -175,21 +175,7 @@ body {
   /* Dar color más tenue al placeholder de los input */
 input::placeholder {
     color: hwb(210 59% 39%);
-    
-    
 }
-
-textarea::placeholder{
-padding-inline-start: 180px;
-
-}
-
-.inpuText::placeholder{
-    padding-inline-start: 180px;   
-}
-
-
-
 
  /* formulario de correo */
 .bienvenidaForm{
@@ -251,9 +237,9 @@ padding-inline-start: 180px;
 
 
 
-/*vista general*/
+/*Vista General*/
 .navFijo{
-    background-color: #F9DE79;
+    background-color:#AA8B56;
     width: 1800px;
     height: 70px;
     margin-top: 0%;
@@ -261,112 +247,102 @@ padding-inline-start: 180px;
 }
 
 .nameFijo{
-    color: #658361;
+    color: #ffffff;
     justify-content: center;
     font-size: 50px;
 }
 .task-form{
-    margin-top:20px;
-    background-color:#F9DE79;
+    background-color: #F9DE79;
     border-radius: 40px;
-    display:inline-block;
-    border:solid 3px #658361;
-
+    width: 800px;
+    height: 300px;
+    margin-left: 500px;
+    border: 2px solid #658361;
+    margin-top: 40px;
 }
 
 .labelTitle,
  .labelDescrip{
     padding: 10px;
     font-size: 20px;
-    color: #658361;
+    color:#658361;
     display: block;
     margin-top: 20px;
-   
+  
 }
 
-.inpuText{
-    left: 10px;
-    border-radius: 25px;
+.inpuText, .textArea{
     display: inline-block;
     margin-top: 20px;
     height: 40px;
-    width:500px;
-    border: solid 3px #658361;
-}
-
-textArea{
-    left: 10px;
-    border-radius: 25px;
-    display: inline-block;
-    height: 60px;
     width: 500px;
-    border: solid 3px #658361;
-}
+    border-radius: 20px;
+    border: 2px solid #658361;
 
+}
 
 .buttonGuardar{
     display: block;
-    border-radius: 20px;
-    font-size: 15px;
-    background: #658361;
+    border-radius: 40px;
+    font-size: 18px;
+    background: #658351;
     height: 30px;
     width: 150px;
     color: #ffffff;
-    border: 2px solid #ffffff;
+    border: 2px solid #F9DE79;
     margin: 5px;
     margin-left: 520px;
     margin-top: 20px;
     
-    
 }
 
 .divContainer{
-    display:block;
+    margin-top: 20px;
     padding: 30px;
-    margin: 50px 50px;
-    
-    
+    margin-left: 400px;
 }
-
 .post{
-    display:inline-block;
-    padding: 10px;
-    font-size: 20px;
-    color: #658361;
-    background-color:#F9DE79;
+    background-color:#AA8B56;
+    font-size: 15px;
+    color: #ffffff;
     border-radius: 40px;
-    width: 40%;
-    height: 50%;
-    margin: 70px 70px;
-    border: 2px solid #F9DE79;
-    border: solid 3px #658361;
+    width: 800px;
+    height: 200px;
+    margin: 70px;
+    border: 5px solid #F9DE79;
 
 }
+.btn-delete,.btn-edit{
+    flex-direction:row;
+    border-radius: 40px;
+    font-size: 15px;
+    background: #658351;
+    height: 30px;
+    width: 100px;
+    color: #ffffff;
+    border: 2px solid #F9DE79;
+    margin: 5px;
+
+}
+
 
 .like-container{
-    width: 120px;
-    height: 45px;
+    width: 100px;
+    height: 50px;
     display: inline-block;
     justify-content: center;
     align-content: center;
 }
 
-.imagenLike{
-    width:35px;
-    height: 35px;
-    margin-right: 250px;
-    cursor: pointer;
+.like-count{
+flex-direction: row;
 }
 
-
-.btn-edit, .btn-delete {
-    border-radius: 20px;
-    font-size: 15px;
-    background: #658361;
-    height: 30px;
-    width: 100px;
-    color: #ffffff;
-    border: 2px solid #ffffff;   
+.imagenLike{
+    width:35px;
+    height: 36px;
+    margin-top: 50px;
+    cursor: pointer;
 }
 
 /*responsive*/
@@ -381,11 +357,7 @@ textArea{
         height: 260px;
     }
     
-    .welcomeh1{
-        margin-top: 300px;
-    }
-
-    .registrate{
+    .welcomeh1, .registrate{
         margin-top: 300px;
     }
 
@@ -393,18 +365,12 @@ textArea{
         top: 150px;
     }
 
-    #google{
+    .google, .correo{
         font-size: 13px;
         margin-left: 10px;
-        
-    }
-
-    #correo{
-        font-size: 13px;
-        margin-left: 10px;  
-    }
-
-    .nombreForm{
+     }
+     
+     .nombreForm{
         font-size: 30px;
         margin-top: 70px;
     }
@@ -413,8 +379,10 @@ textArea{
         margin-top: 280px;
     }
 
-    
+    .nameFijo{
+        font-size: 60px;
 
-    
- 
+    }
+
+
 }
