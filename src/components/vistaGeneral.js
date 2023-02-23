@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-cycle
 import {
-  saveTask, onGetTasks, deleteTask, getTask, updateTask, 
+  saveTask, onGetTasks, deleteTask, getTask, updateTask, addlike,
 } from '../lib/firebase/muroFir.js';
 import { auth,onAuthStateChanged } from '../lib/firebase/metFirebase.js';
 export const vistaGeneral = () => {
@@ -73,7 +73,7 @@ export const vistaGeneral = () => {
           <h3>${task.title}</h3>
           <p>${task.description}</p>
         <div class="like-container">
-          <img src="images/flame.png" class= "imagenLike" alt="flama"/>
+          <img src="images/flame.png" class= "imagenLike" data-id="${doc.id}" data-likes="${task.likes}" alt="flama"/>
           <span class="like-count">${task.likes}</span>
         </div>
         ${task.uid===userid ? `
@@ -86,16 +86,17 @@ export const vistaGeneral = () => {
 
       divContainer.innerHTML = html;
 
-      const likeButton = document.querySelector(".imagenLike");
-      const likeCount = document.querySelector(".like-count");
-      let count = 0;
-
-      likeButton.addEventListener("click", function() {
-        count++;
-        likeCount.innerHTML = count;
-     
-      });
-
+      const likeButtons = document.querySelectorAll(".imagenLike");
+      
+      likeButtons.forEach((likeButton)=> {
+        likeButton.addEventListener("click", function(evento) {
+          const target = evento.target
+          const dataset = target.dataset
+          console.log(dataset)
+          addlike(dataset.id, dataset.likes);
+        })
+      })
+      
       const btnDelete = divContainer.querySelectorAll('.btn-delete');
       // eslint-disable-next-line arrow-parens
       btnDelete.forEach(btn => {
