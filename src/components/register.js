@@ -21,9 +21,8 @@ export const register = () => {
   iconGoogle.className = 'iconGoogle';
   iconCorreo.className = 'iconCorreo';
   hrefHome.className = 'hrefHome';
-  buttonGoogle.className= 'google';
-  buttonCorreo.className= 'correo';
-  
+  buttonGoogle.className = 'google';
+  buttonCorreo.className = 'correo';
 
   buttonGoogle.id = 'google';
   buttonCorreo.id = 'correo';
