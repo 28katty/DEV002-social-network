@@ -241,7 +241,7 @@ input::placeholder {
 /*Vista General*/
 .navFijo {
     background-color: #AA8B56;
-    width: 1800px;
+    width: 100%;
     height: 70px;
     margin-top: 0%;
     position: grid;
