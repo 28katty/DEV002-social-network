@@ -60,7 +60,7 @@ export const vistaGeneral = () => {
   });
 
 
-  window.addEventListener('DOMContentLoaded', async () => {
+  window.addEventListener('DOMContentLoaded',  () => {
     onGetTasks((querySnapshot) => {
       let html = '';
       
@@ -92,13 +92,13 @@ export const vistaGeneral = () => {
         likeButton.addEventListener("click", function(evento) {
           const target = evento.target
           const dataset = target.dataset
-          console.log(dataset)
+          console.log(dataset)     
           addlike(dataset.id, dataset.likes);
         })
       })
       
       const btnDelete = divContainer.querySelectorAll('.btn-delete');
-      // eslint-disable-next-line arrow-parens
+      // eslint-disable-next-line arrow-parens          
       btnDelete.forEach(btn => {
         btn.addEventListener('click', ({ target: { dataset } }) => {
           if (confirm('¿Estás seguro de que deseas eliminar esta tarea?')) {
