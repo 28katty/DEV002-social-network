@@ -249,7 +249,6 @@ input::placeholder {
 .nameFijo{
     color: #ffffff;
     justify-content: center;
-    /*align-items: center;*/
     font-size: 50px;
 }
 .task-form{
@@ -379,5 +378,11 @@ flex-direction: row;
     .login{
         margin-top: 280px;
     }
+
+    .nameFijo{
+        font-size: 60px;
+
+    }
+
 
 }
