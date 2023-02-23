@@ -250,7 +250,6 @@ input::placeholder {
 .nameFijo {
     color: #ffffff;
     justify-content: center;
-    align-items: center;
     font-size: 50px;
 }
 
@@ -387,4 +386,11 @@ input::placeholder {
     .login {
         margin-top: 280px;
     }
+
+    .nameFijo{
+        font-size: 60px;
+
+    }
+
+
 }

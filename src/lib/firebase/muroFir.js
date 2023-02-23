@@ -1,12 +1,13 @@
 import {
-  collection, addDoc, getDocs, db, deleteDoc, onSnapshot, doc, getDoc, updateDoc,
+  collection, addDoc, getDocs, db, deleteDoc, onSnapshot, doc, getDoc, updateDoc, 
 } from './metFirebase.js';
 
-export const saveTask = (title, description) => {
+export const saveTask = (title, description, uid) => {
   const newPost = {
-    likes: 0,
+    likes: [],
     title: title,
     description: description,
+    uid:uid,
   };
   addDoc(collection(db, 'tasks'), newPost);
 };

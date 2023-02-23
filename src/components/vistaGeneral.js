@@ -2,7 +2,7 @@
 import {
   saveTask, onGetTasks, deleteTask, getTask, updateTask, addlike,
 } from '../lib/firebase/muroFir.js';
-
+import { auth,onAuthStateChanged } from '../lib/firebase/metFirebase.js';
 export const vistaGeneral = () => {
   const homeDiv = document.createElement('div');
   const navFijo = document.createElement('nav');
@@ -49,12 +49,25 @@ export const vistaGeneral = () => {
   let editStatus = false;
   let id = '';
 
-  window.addEventListener('DOMContentLoaded', async () => {
+  let userid;
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+     
+      userid = user.uid;
+    } else {
+     console.log('no hay usuario')
+    }
+  });
+
+
+  window.addEventListener('DOMContentLoaded',  () => {
     onGetTasks((querySnapshot) => {
       let html = '';
+      
 
       querySnapshot.forEach((doc) => {
         const task = doc.data();
+        console.log('que hay en task', task);
         html += `
         <div class= "post">
           <h3>${task.title}</h3>
@@ -63,8 +76,10 @@ export const vistaGeneral = () => {
           <img src="images/flame.png" class= "imagenLike" data-id="${doc.id}" data-likes="${task.likes}" alt="flama"/>
           <span class="like-count">${task.likes}</span>
         </div>
+        ${task.uid===userid ? `
           <button class='btn-delete' data-id="${doc.id}">Eliminar</button>
-          <button class='btn-edit' data-id="${doc.id}">Editar</button>
+          <button class='btn-edit' data-id="${doc.id}">Editar</button>  ` : ''}
+
         </div>
       `;
       });
@@ -77,13 +92,13 @@ export const vistaGeneral = () => {
         likeButton.addEventListener("click", function(evento) {
           const target = evento.target
           const dataset = target.dataset
-          console.log(dataset)
+          console.log(dataset)     
           addlike(dataset.id, dataset.likes);
         })
       })
       
       const btnDelete = divContainer.querySelectorAll('.btn-delete');
-      // eslint-disable-next-line arrow-parens
+      // eslint-disable-next-line arrow-parens          
       btnDelete.forEach(btn => {
         btn.addEventListener('click', ({ target: { dataset } }) => {
           if (confirm('¿Estás seguro de que deseas eliminar esta tarea?')) {
@@ -117,11 +132,12 @@ export const vistaGeneral = () => {
     const description = formMuro['task-description'];
 
     if (!editStatus) {
-      saveTask(title.value, description.value);
+      saveTask(title.value, description.value, userid);
     } else {
       updateTask(id, {
         title: title.value,
         description: description.value,
+        uid:userid
       });
       editStatus = false;
     }
