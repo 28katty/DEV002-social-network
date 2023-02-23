@@ -2,7 +2,10 @@
 import {
   saveTask, onGetTasks, deleteTask, getTask, updateTask, addlike,
 } from '../lib/firebase/muroFir.js';
-import { auth,onAuthStateChanged } from '../lib/firebase/metFirebase.js';
+import {
+  auth, onAuthStateChanged,
+} from '../lib/firebase/metFirebase.js';
+
 export const vistaGeneral = () => {
   const homeDiv = document.createElement('div');
   const navFijo = document.createElement('nav');
@@ -52,18 +55,13 @@ export const vistaGeneral = () => {
   let userid;
   onAuthStateChanged(auth, (user) => {
     if (user) {
-     
       userid = user.uid;
-    } else {
-     console.log('no hay usuario')
     }
   });
 
-
-  window.addEventListener('DOMContentLoaded',  () => {
+  window.addEventListener('DOMContentLoaded', () => {
     onGetTasks((querySnapshot) => {
       let html = '';
-      
 
       querySnapshot.forEach((doc) => {
         const task = doc.data();
@@ -76,7 +74,7 @@ export const vistaGeneral = () => {
           <img src="images/flame.png" class= "imagenLike" data-id="${doc.id}" data-likes="${task.likes}" alt="flama"/>
           <span class="like-count">${task.likes}</span>
         </div>
-        ${task.uid===userid ? `
+        ${task.uid === userid ? `
           <button class='btn-delete' data-id="${doc.id}">Eliminar</button>
           <button class='btn-edit' data-id="${doc.id}">Editar</button>  ` : ''}
 
@@ -86,24 +84,43 @@ export const vistaGeneral = () => {
 
       divContainer.innerHTML = html;
 
-      const likeButtons = document.querySelectorAll(".imagenLike");
-      
-      likeButtons.forEach((likeButton)=> {
-        likeButton.addEventListener("click", function(evento) {
-          const target = evento.target
-          const dataset = target.dataset
-          console.log(dataset)     
+      const likeButtons = document.querySelectorAll('.imagenLike');
+
+      likeButtons.forEach((likeButton) => {
+        likeButton.addEventListener('click', (evento) => {
+          const target = evento.target;
+          const dataset = target.dataset;
+          console.log(dataset);
           addlike(dataset.id, dataset.likes);
-        })
-      })
-      
+        });
+      });
+
       const btnDelete = divContainer.querySelectorAll('.btn-delete');
-      // eslint-disable-next-line arrow-parens          
+      // eslint-disable-next-line arrow-parens
       btnDelete.forEach(btn => {
         btn.addEventListener('click', ({ target: { dataset } }) => {
-          if (confirm('¿Estás seguro de que deseas eliminar esta tarea?')) {
+          const modal = document.createElement('div');
+          modal.classList.add('modal');
+          modal.innerHTML = `
+            <div class="modal-content">
+              <p>¿Estás seguro de que deseas eliminar esta tarea?</p>
+              <button class="btn-yes">Sí</button>
+              <button class="btn-no">No</button>
+            </div>
+          `;
+          document.body.appendChild(modal);
+
+          const btnYes = modal.querySelector('.btn-yes');
+          const btnNo = modal.querySelector('.btn-no');
+
+          btnYes.addEventListener('click', () => {
             deleteTask(dataset.id);
-          }
+            document.body.removeChild(modal);
+          });
+
+          btnNo.addEventListener('click', () => {
+            document.body.removeChild(modal);
+          });
         });
       });
 
@@ -137,7 +154,7 @@ export const vistaGeneral = () => {
       updateTask(id, {
         title: title.value,
         description: description.value,
-        uid:userid
+        uid: userid,
       });
       editStatus = false;
     }

@@ -46,7 +46,7 @@ export const login = () => {
   button.type = 'submit';
 
   hrefHome.addEventListener('click', () => onNavigate('/'));
-  button.addEventListener('click',  () =>  onNavigate('/vistaGeneral'));
+  button.addEventListener('click', () => onNavigate('/vistaGeneral'));
 
   homeDiv.appendChild(sectionDiv);
   sectionDiv.appendChild(nombreApp);
