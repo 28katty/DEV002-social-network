@@ -72,7 +72,7 @@ export const vistaGeneral = () => {
           <p>${task.description}</p>
         <div class="like-container">
           <img src="images/flame.png" class= "imagenLike" data-id="${doc.id}" data-likes="${task.likes}" alt="flama"/>
-          <span class="like-count">${task.likes}</span>
+          <span class="like-count">${task.likes.length}</span>
         </div>
         ${task.uid === userid ? `
           <button class='btn-delete' data-id="${doc.id}">Eliminar</button>
