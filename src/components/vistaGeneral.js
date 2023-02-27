@@ -27,7 +27,7 @@ export const vistaGeneral = () => {
   textArea.className = 'textArea';
   buttonGuardar.className = 'buttonGuardar';
   divContainer.className = 'divContainer';
-  homeDiv.className = 'divGeneral'
+  homeDiv.className = 'divGeneral';
 
   formMuro.id = 'task-form';
   inpuText.id = 'inpuText';
@@ -66,7 +66,6 @@ export const vistaGeneral = () => {
 
       querySnapshot.forEach((doc) => {
         const task = doc.data();
-        console.log('que hay en task', task);
         html += `
         <div class= "post">
           <h3>${task.title}</h3>
@@ -91,7 +90,6 @@ export const vistaGeneral = () => {
         likeButton.addEventListener('click', (evento) => {
           const target = evento.target;
           const dataset = target.dataset;
-          console.log(dataset);
           addlike(dataset.id, dataset.likes);
         });
       });
