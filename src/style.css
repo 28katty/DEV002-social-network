@@ -68,6 +68,7 @@ body {
     border-radius: 40px;
     font-size: 18px;
     align-items: center;
+    text-align: center;
     justify-content: space-around;
     background: #ffffff;
     height: 40px;
@@ -236,23 +237,22 @@ input::placeholder {
     left: 7px;
 }
 
-
-
 /*Vista General*/
-.navFijo{
-    background-color:#AA8B56;
+.navFijo {
+    background-color: #AA8B56;
     width: 1800px;
     height: 70px;
     margin-top: 0%;
     position: grid;
 }
 
-.nameFijo{
+.nameFijo {
     color: #ffffff;
     justify-content: center;
     font-size: 50px;
 }
-.task-form{
+
+.task-form {
     background-color: #F9DE79;
     border-radius: 40px;
     width: 800px;
@@ -317,7 +317,9 @@ input::placeholder {
 }
 
 .btn-delete,
-.btn-edit {
+.btn-edit,
+.btn-yes,
+.btn-no {
     flex-direction: row;
     border-radius: 40px;
     font-size: 15px;
@@ -327,7 +329,6 @@ input::placeholder {
     color: #ffffff;
     border: 2px solid #F9DE79;
     margin: 5px;
-
 }
 
 
@@ -350,8 +351,22 @@ input::placeholder {
     cursor: pointer;
 }
 
+.modal-content {
+    width: 330px;
+    height: 100px;
+    border: 2px solid #658361;
+    position: absolute;
+    display: block;
+    justify-content: center;
+    align-content: center;
+    left: 40%;
+    top: 47%;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+
 /*responsive*/
-@media (max-width: 592px) {
+@media (max-width: 592px){
     .nombreAplicacion {
         font-size: 30px;
     }
@@ -374,7 +389,7 @@ input::placeholder {
     .google,
     .correo {
         font-size: 13px;
-        margin-left: 10px;
+        margin-left: 8px;
     }
 
     .nombreForm {
@@ -385,11 +400,122 @@ input::placeholder {
     .login {
         margin-top: 280px;
     }
+}
 
-    .nameFijo{
-        font-size: 60px;
-
+@media (min-width:390px) and (max-width:844px){
+    .navFijo {
+        width: 80%;
+        height: 50px;
+        margin-left: 10%;
+        margin-top: 43px;
     }
 
+    .nameFijo {
+        font-size: 30px;
+    }
 
+    .task-form {
+        width: 280px;
+        height: 200px;
+        margin-left: 50px;
+    }
+
+    .inpuText,
+    .textArea {
+        height: 20px;
+        width: 250px;
+        margin-top: -1px;
+    }
+
+    .buttonGuardar {
+        margin-left: 150px;
+        font-size: 13px;
+        width: 100px;
+    }
+
+    .divContainer {
+        margin-top: 10px;
+        padding: 10px;
+        margin-left: -10px;
+    }
+
+    .post {
+        width: 300px;
+        height: 200px;
+        margin-left: 40px;
+    }
+
+    .btn-delete,
+    .btn-edit,
+    .btn-yes,
+    .btn-no {
+        /*margin-left: 220px;*/
+        font-size: 13px;
+        width: 80px;
+    }
+
+    .modal-content {
+        width: 200px;
+        height: 120px;
+        left: 20%;
+    }
+}
+
+@media (min-width:768px) and (max-width:1024px){
+    .navFijo {
+        width: 100%;
+        height: 50px;
+        margin-left: -3%;
+        margin-top: 43px;
+    }
+
+    .nameFijo {
+        font-size: 30px;
+    }
+
+    .task-form {
+        width: 500px;
+        height: 200px;
+        margin-left: -20px;
+    }
+
+    .inpuText,
+    .textArea {
+        height: 20px;
+        width: 250px;
+        margin-top: -1px;
+    }
+
+    .buttonGuardar {
+        margin-left: 340px;
+        font-size: 15px;
+        width: 130px;
+    }
+
+    .divContainer {
+        margin-top: 10px;
+        padding: 10px;
+        margin-left: -30px;
+    }
+
+    .post {
+        width: 500px;
+        height: 200px;
+        margin-left: -3px;
+    }
+
+    .btn-delete,
+    .btn-edit,
+    .btn-yes,
+    .btn-no {
+        /*margin-left: 220px;*/
+        font-size: 13px;
+        width: 80px;
+    }
+
+    .modal-content {
+        width: 200px;
+        height: 120px;
+        left: 20%;
+    }
 }
