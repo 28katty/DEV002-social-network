@@ -27,6 +27,7 @@ export const vistaGeneral = () => {
   textArea.className = 'textArea';
   buttonGuardar.className = 'buttonGuardar';
   divContainer.className = 'divContainer';
+  homeDiv.className = 'divGeneral'
 
   formMuro.id = 'task-form';
   inpuText.id = 'inpuText';
